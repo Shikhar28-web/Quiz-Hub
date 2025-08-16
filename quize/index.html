@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Auto Quiz Builder</title>
+	<link rel="stylesheet" href="/quize/style.css" />
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='160'%3F%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+	<header class="app-header">
+		<div class="brand">QuizHub</div>
+		<div class="spacer"></div>
+		<button id="themeToggle" aria-label="Toggle theme">🌙</button>
+	</header>
+
+	<main id="app">
+		<section id="teacherView" class="view">
+			<h1>Create a Test</h1>
+			<div class="card">
+				<div class="row">
+					<label for="titleInput">Test title</label>
+					<input id="titleInput" type="text" placeholder="e.g., Midterm: Intro to Biology" />
+				</div>
+				<div class="row">
+					<label for="fileInput">Upload file (.txt, .pdf, .docx, .pptx)</label>
+					<input id="fileInput" type="file" accept=".txt,.pdf,.docx,.pptx" />
+				</div>
+				<div class="row or">— or —</div>
+				<div class="row">
+					<label for="urlInput">Source URL</label>
+					<input id="urlInput" type="url" placeholder="https://example.com/article" />
+				</div>
+				<div class="row or">— or —</div>
+				<div class="row">
+					<label for="textInput">Paste text</label>
+					<textarea id="textInput" rows="5" placeholder="Paste your study material..."></textarea>
+				</div>
+			</div>
+
+			<div class="grid">
+				<div class="card">
+					<h2>Question Settings</h2>
+					<div class="row">
+						<label for="numQuestions">Total questions</label>
+						<input id="numQuestions" type="number" min="1" max="100" value="10" />
+					</div>
+					<div class="row">
+						<label>Difficulty distribution</label>
+						<div class="grid-3">
+							<div><span>Easy</span><input id="easyCount" type="number" min="0" value="4" /></div>
+							<div><span>Medium</span><input id="mediumCount" type="number" min="0" value="3" /></div>
+							<div><span>Hard</span><input id="hardCount" type="number" min="0" value="3" /></div>
+						</div>
+					</div>
+					<div class="row">
+						<label>Type distribution</label>
+						<div class="grid-4">
+							<div><span>MCQ</span><input id="mcqCount" type="number" min="0" value="4" /></div>
+							<div><span>True/False</span><input id="tfCount" type="number" min="0" value="3" /></div>
+							<div><span>Multiple correct</span><input id="multiCount" type="number" min="0" value="1" /></div>
+							<div><span>Fill blank</span><input id="fillCount" type="number" min="0" value="2" /></div>
+						</div>
+					</div>
+					<div class="actions">
+						<button id="generateBtn">Generate Questions</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2>Preview</h2>
+					<div id="preview"></div>
+					<div class="actions">
+						<button id="saveBtn" disabled>Save Test</button>
+						<button id="exportBtn" disabled>Export Link</button>
+						<input id="exportLink" type="text" readonly placeholder="Shareable link will appear here" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="studentView" class="view hidden">
+			<h1 id="testTitle">Take Test</h1>
+			<div id="studentInfo" class="card">
+				<label for="studentName">Your name</label>
+				<input id="studentName" type="text" placeholder="Enter your name" />
+			</div>
+			<div id="testContainer" class="card"></div>
+			<div class="actions">
+				<button id="submitBtn">Submit Answers</button>
+			</div>
+			<div id="results" class="card hidden"></div>
+		</section>
+	</main>
+
+	<!-- Chatbot -->
+	<div id="chatbot">
+		<button id="chatToggle" aria-label="Open chat">💬</button>
+		<div id="chatPanel" class="hidden">
+			<div id="chatMessages"></div>
+			<div class="chat-input">
+				<input id="chatText" type="text" placeholder="Ask for help..." />
+				<button id="chatSend">Send</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="/quize/app.js"></script>
+</body>
+</html> 
