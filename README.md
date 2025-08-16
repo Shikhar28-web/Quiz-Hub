@@ -41,8 +41,8 @@ A modern, intelligent web application that automatically generates quizzes from 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/quiz-hub.git
-   cd quiz-hub
+   git clone https://github.com/Shikhar28-web/Quiz-Hub.git
+   cd Quiz-Hub
    ```
 
 2. **Run the setup script**
@@ -200,3 +200,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 **Made with ❤️ os shikhar for educators and learners everywhere** 
+
