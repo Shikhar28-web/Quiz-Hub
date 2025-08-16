@@ -196,13 +196,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - AI integration powered by Google Gemini and Hugging Face
 - Icons and emojis for enhanced user experience
 
-## 📞 Support
 
-If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/yourusername/quiz-hub/issues) page
-2. Use the built-in chatbot for help
-3. Create a new issue with detailed information
 
----
 
-**Made with ❤️ for educators and learners everywhere** 
+**Made with ❤️ os shikhar for educators and learners everywhere** 
